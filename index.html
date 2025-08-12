@@ -1,135 +1,159 @@
-</html>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Archetaip – Effective Enterprise Architecture</title>
-    <style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Archetaip – Effective Enterprise Architecture</title>
+<!-- Add Comfortaa font from Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@600&display=swap" rel="stylesheet">
+<style>
+    body {
+        margin: 0;
+        font-family: 'Comfortaa', sans-serif; /* Changed to Comfortaa */
+        font-weight: 600; /* Semibold weight */
+        background: linear-gradient(to bottom, #f4e2c2, #e6d0a3); /* sepia tones from logo */
+        color: #333;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        min-height: 100vh;
+        text-align: center;
+        padding: 2rem;
+        line-height: 1.6;
+    }
+    header img {
+        max-width: 300px;
+        height: auto;
+        margin-bottom: 1rem;
+    }
+    h1 {
+        font-size: 2.2rem;
+        margin: 0.5rem 0;
+        color: #8a6d00;
+    }
+    p.tagline {
+        font-size: 1.2rem;
+        font-style: italic;
+        color: #444;
+    }
+    section {
+        max-width: 800px;
+        margin: 2rem auto;
+        text-align: left;
+        background: rgba(255,255,255,0.8); /* subtle white box for readability */
+        padding: 1rem 1.5rem;
+        border-radius: 8px;
+    }
+    section h2 {
+        color: #8a6d00;
+        border-bottom: 2px solid #d9c08a;
+        padding-bottom: 0.5rem;
+    }
+    ul.services {
+        list-style: none;
+        padding: 0;
+    }
+    ul.services li {
+        margin: 0.5rem 0;
+    }
+    a.button {
+        display: inline-block;
+        padding: 0.75rem 1.5rem;
+        background-color: #8a6d00;
+        color: white;
+        text-decoration: none;
+        border-radius: 4px;
+        font-weight: 600; /* Maintain semibold weight */
+        transition: background-color 0.3s;
+    }
+    a.button:hover {
+        background-color: #6e5600;
+    }
+    footer {
+        margin-top: 2rem;
+        padding: 1rem;
+        font-size: 0.9rem;
+        color: #444;
+        text-align: center;
+        border-top: 1px solid #d9c08a;
+        width: 100%;
+        background: rgba(255,255,255,0.8);
+    }
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
         body {
-            margin: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background-color: #ffffff;
-            color: #333;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: flex-start;
-            min-height: 100vh;
-            text-align: center;
-            padding: 2rem;
-            line-height: 1.6;
+            padding: 1rem;
         }
         header img {
-            max-width: 300px;
-            height: auto;
-            margin-bottom: 1rem;
-        }
-        h1 {
-            font-size: 2.2rem;
-            margin: 0.5rem 0;
-            color: #8a6d00;
-        }
-        p.tagline {
-            font-size: 1.2rem;
-            font-style: italic;
-            color: #555;
+            max-width: 200px;
         }
         section {
-            max-width: 800px;
-            margin: 2rem auto;
-            text-align: left;
-        }
-        section h2 {
-            color: #8a6d00;
-            border-bottom: 2px solid #eee;
-            padding-bottom: 0.5rem;
-        }
-        ul.services {
-            list-style: none;
-            padding: 0;
-        }
-        ul.services li {
-            margin: 0.5rem 0;
-        }
-        a.button {
-            display: inline-block;
-            padding: 0.75rem 1.5rem;
-            background-color: #8a6d00;
-            color: white;
-            text-decoration: none;
-            border-radius: 4px;
-            font-weight: bold;
-            transition: background-color 0.3s;
-        }
-        a.button:hover {
-            background-color: #6e5600;
-        }
-        /* ADDED STYLES FOR FOOTER */
-        footer {
-            margin-top: 2rem;
             padding: 1rem;
-            font-size: 0.9rem;
-            color: #666;
-            text-align: center;
-            border-top: 1px solid #eee;
-            width: 100%;
         }
-    </style>
+        h1 {
+            font-size: 1.8rem;
+        }
+    }
+    @media (max-width: 480px) {
+        h1 {
+            font-size: 1.5rem;
+        }
+        p.tagline {
+            font-size: 1rem;
+        }
+    }
+</style>
 </head>
 <body>
-    <header>
-        <img src="ArchetaipLogo.jpg" alt="Archetaip Logo">
-        <!--h1>Archetaip Ltd.</h1>
-        <p class="tagline">Effective Enterprise Architecture</p-->
-    </header>
-    <main>
-        <section>
-            <p>
-                We help public institutions and private organizations align technology and strategy through robust enterprise architecture practices. 
-                Our mission is to bring clarity, structure, and long-term value to your digital transformation journey.
-            </p>
-        </section>
+<header>
+    <img src="ArchetaipLogo.jpg" alt="Archetaip Logo">
+</header>
+<main>
+    <section>
+        <p>
+            We help public institutions and private organizations align technology and strategy through robust enterprise architecture practices. 
+            Our mission is to bring clarity, structure, and long-term value to your digital transformation journey.
+        </p>
+    </section>
 
-        <section id="about">
-            <h2>About Me</h2>
-            <p>
-                I am an Enterprise Architect with over 20 years of experience delivering complex IT solutions across public and private sectors. 
-                Since 2016, I have worked with EU institutions — including the European Commission, EU Agencies, and the European Parliament — 
-                helping them achieve successful digital transformations through robust architecture practices.
-            </p>
-            <p>
-                My expertise covers enterprise and solution architecture, system integration, and infrastructure planning. 
-                I specialize in creating clear, actionable architecture deliverables that bridge business goals with technical delivery, 
-                enabling sustainable, future-proof digital ecosystems.
-            </p>
-        </section>
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am an Enterprise Architect with over 20 years of experience delivering complex IT solutions across public and private sectors. 
+            Since 2016, I have worked with EU institutions — including the European Commission, EU Agencies, and the European Parliament — 
+            helping them achieve successful digital transformations through robust architecture practices.
+        </p>
+        <p>
+            My expertise covers enterprise and solution architecture, system integration, and infrastructure planning. 
+            I specialize in creating clear, actionable architecture deliverables that bridge business goals with technical delivery, 
+            enabling sustainable, future-proof digital ecosystems.
+        </p>
+    </section>
 
-        <section id="services">
-            <h2>Services</h2>
-            <ul class="services">
-                <li>Enterprise & Solution Architecture Design</li>
-                <li>Capability Modeling & Strategic Roadmapping</li>
-                <li>Integration Strategy & Technical Blueprinting</li>
-                <li>Architecture Governance & Compliance Reviews</li>
-            </ul>
-        </section>
+    <section id="services">
+        <h2>Services</h2>
+        <ul class="services">
+            <li>Enterprise & Solution Architecture Design</li>
+            <li>Capability Modeling & Strategic Roadmapping</li>
+            <li>Integration Strategy & Technical Blueprinting</li>
+            <li>Architecture Governance & Compliance Reviews</li>
+        </ul>
+    </section>
 
-        <section id="contact">
-            <h2>Contact</h2>
-            <p>If you’d like to discuss how I can help your organization, get in touch:</p>
-            <p>
-                <a href="mailto:sales@archetaip.com" class="button">Email Me</a>
-            </p>
-            <p>
-                <a href="https://www.linkedin.com/company/archetaip-ltd" target="_blank">Connect on LinkedIn</a>
-            </p>
-        </section>
-    </main>
-    
-    <!-- ADDED FOOTER WITH ADDRESS PLACEHOLDER -->
-    <footer>
-        <p>Archetaip Ltd. Saint John of Rila 3 - 1606 Sofia Bulgaria</p>
-    </footer>
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>If you'd like to discuss how I can help your organization, get in touch:</p>
+        <p>
+            <a href="mailto:sales@archetaip.com" class="button">Email Me</a>
+        </p>
+        <p>
+            <a href="https://www.linkedin.com/company/archetaip-ltd" target="_blank">Connect on LinkedIn</a>
+        </p>
+    </section>
+</main>
+<footer>
+    <p>Archetaip Ltd. Saint John of Rila 3 - 1606 Sofia Bulgaria</p>
+</footer>
 </body>
 </html>
