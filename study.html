@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Elo vs Point-Accumulation Ranking Systems</title>
+<script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 20px;
+        background-color: #f9f9f9;
+        color: #333;
+    }
+    h1, h2 {
+        color: #2c3e50;
+    }
+    table {
+        border-collapse: collapse;
+        width: 100%;
+        margin: 20px 0;
+        background-color: #fff;
+    }
+    th, td {
+        border: 1px solid #ccc;
+        padding: 8px 12px;
+        text-align: center;
+    }
+    th {
+        background-color: #ecf0f1;
+    }
+    .formula {
+        text-align: center;
+        margin: 15px 0;
+        font-size: 1.1em;
+    }
+</style>
+</head>
+<body>
+
+<h1>The Advantages of Elo over Point-Accumulation Ranking Systems</h1>
+
+<p>Ranking competitors according to skill can be approached in multiple ways. Traditional point-accumulation systems rank players by summing points earned from results over a defined period, such as tournament finishes. While intuitive, this approach has inherent limitations: it treats all victories as additive regardless of the opponent’s strength, can lag behind current performance, and often requires complex rules to handle varying tournament weights and decay over time.</p>
+
+<p>The Elo rating system, in contrast, models player skill dynamically as a performance rating. Each match updates a player’s rating based on the expected outcome relative to the opponent’s rating. Wins against stronger opponents increase ratings more, while losses to weaker opponents penalize ratings more. This framework captures both relative strength and current form, providing a more accurate, real-time estimate of a player’s ability.</p>
+
+<p>Moreover, Elo naturally accounts for uncertainty and probabilistic outcomes. It allows predictions of future match results and better seeding in competitions, whereas point-accumulation systems are often retrospective and less predictive. Elo also discourages “gaming” the system by exploiting tournament selection: players are incentivized to compete against strong opponents because performance against them meaningfully affects their rating.</p>
+
+<p>In essence, Elo embodies the concept of performance rating, offering a continuous, self-correcting measure of skill that reflects both strength and recent form, whereas simple accumulation of points provides a coarser, lagging approximation. For accurate and dynamic ranking, Elo is therefore superior.The Elo rating system, in contrast, models player skill dynamically as a performance rating. Each match updates a player’s rating based on the expected outcome relative to the opponent’s rating. Wins against stronger opponents increase ratings more, while losses to weaker opponents penalize ratings more. This framework captures both relative strength and current form, providing a more accurate, real-time estimate of a player’s ability.</p>
+
+<p>The Elo rating system offers a mathematically grounded alternative. Each player is assigned a rating <em>R</em> representing an estimate of skill. After a match, ratings are updated according to:</p>
+
+<div class="formula">$$R' = R + K \cdot (S - E)$$</div>
+
+<p>where <strong>R'</strong> is the new rating, <strong>K</strong> is a scaling constant controlling the maximum rating change per game, <strong>S</strong> is the actual score (1 for a win, 0.5 for a draw, 0 for a loss), and <strong>E</strong> is the expected score based on the rating difference:</p>
+
+<div class="formula">$$E = \frac{1}{1 + 10^{(R_{\text{opponent}} - R)/400}}$$</div>
+
+<p>This formula embodies the concept of <strong>performance rating</strong>: the rating change depends not only on the outcome but on whether it exceeded or fell short of expectation. The <strong>K-factor</strong> allows tuning responsiveness—higher values reflect recent form more quickly, while lower values stabilize ratings over time.</p>
+
+<p>For example, suppose Player A has a rating of 1600, with K = 32. The rating changes after different outcomes are:</p>
+
+<table>
+    <tr>
+        <th>Opponent Rating</th>
+        <th>Expected Score (E)</th>
+        <th>Outcome (S)</th>
+        <th>Rating Change</th>
+        <th>New Rating (R')</th>
+    </tr>
+    <tr>
+        <td>1800 (stronger)</td>
+        <td>0.24</td>
+        <td>Win (1)</td>
+        <td>+24</td>
+        <td>1624</td>
+    </tr>
+    <tr>
+        <td>1400 (weaker)</td>
+        <td>0.76</td>
+        <td>Win (1)</td>
+        <td>+8</td>
+        <td>1608</td>
+    </tr>
+    <tr>
+        <td>1600 (equal)</td>
+        <td>0.50</td>
+        <td>Win (1)</td>
+        <td>+16</td>
+        <td>1616</td>
+    </tr>
+    <tr>
+        <td>1800 (stronger)</td>
+        <td>0.24</td>
+        <td>Loss (0)</td>
+        <td>-8</td>
+        <td>1592</td>
+    </tr>
+    <tr>
+        <td>1400 (weaker)</td>
+        <td>0.76</td>
+        <td>Loss (0)</td>
+        <td>-24</td>
+        <td>1576</td>
+    </tr>
+</table>
+
+<p>This table illustrates that Elo rewards victories against stronger opponents more heavily while penalizing unexpected losses proportionally, capturing relative skill and current form—a nuance absent in point-accumulation systems.</p>
+
+<p>Overall, Elo provides a continuous, adaptive measure of skill, predicts expected outcomes, and mitigates systemic distortions inherent in simple point-based rankings. By combining a mathematically principled update rule, the expected score, and the K-factor, Elo offers a precise, fair, and predictive ranking system superior to traditional point accumulation.</p>
+
+</body>
+</html>
